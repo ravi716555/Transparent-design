@@ -1,0 +1,21 @@
+<div class="container">
+    <div class="avatar-upload">
+        <div class="avatar-edit">
+            <input type='file' id="imageUpload" disabled #file accept=".png, .jpg, .jpeg" />
+            <label for="imageUpload"></label>
+        </div>
+        <div class="avatar-preview">
+            <img id="imagePreview" [src]="imageUrl" alt="">
+        </div>
+    </div>
+    <div class="user_info">
+        <input type="text" placeholder="user name" [(ngModel)]='name' disabled>
+        <input type="email" placeholder="email" [(ngModel)]='email' disabled>
+        <input type="text" placeholder="address" [(ngModel)]='address' disabled>
+        <input type="text" placeholder="user name" [(ngModel)]='age' disabled>
+        <input type="number" placeholder="mobile number" [(ngModel)]='mobileNumber' disabled>
+        <input type="text" placeholder="city" [(ngModel)]='city' disabled>
+
+        <!-- <button type="button" (click)="updateProfile()">submit</button> -->
+    </div>
+</div>

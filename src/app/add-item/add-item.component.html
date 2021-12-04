@@ -1,0 +1,29 @@
+<div class="container">
+    <!-- <h1>Upload image Item 
+        <small>with preview</small>
+    </h1> -->
+    <div class="avatar-upload">
+        <div class="avatar-edit">
+            <input type='file' id="imageUpload" (change)="showPreview($event)" #file accept=".png, .jpg, .jpeg" />
+            <label for="imageUpload"></label>
+        </div>
+        <div class="avatar-preview">
+            <img id="imagePreview" [src]="imgURL" alt="">
+        </div>
+    </div>
+    <form #f="ngForm">
+        <div class="grid">
+            <input type="text" placeholder="Item Name" class="form-control" ngModel required name="item_name" #item_name>
+            <input type="text" placeholder="Description" class="form-control" ngModel required name="description" #description>
+            <select name="category" id="category"  #category>
+                <option value="Veg">Veg</option>
+                <option value="nonVeg">nonVeg</option>
+            </select>
+            <input type="number" placeholder="price" class="form-control" ngModel required name="price" #price>
+        </div>
+        <div class="center">
+            <button type="submit" [disabled]="!f.valid" class="submit" (click)="saveItem(item_name.value,description.value,category.value,price.value)">Submit</button>
+        </div>
+        
+    </form>
+</div>

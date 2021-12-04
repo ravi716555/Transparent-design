@@ -1,0 +1,56 @@
+
+<div class="shopping-cart">
+
+  <div class="column-labels">
+    <label class="product-image">Image</label>
+    <label class="product-details">Product</label>
+    <label class="product-price">Price</label>
+    <label class="product-quantity">Quantity</label>
+    <label class="product-removal">Remove</label>
+    <label class="product-line-price">Total</label>
+  </div>
+
+  <div class="product" *ngFor="let cartItem of item">
+    <div class="product-image">
+      <img src={{cartItem.imageUrl}}>
+    </div>
+    <div class="product-details">
+      <div class="product-title">{{cartItem.name}}</div>
+      <p class="product-description">{{cartItem.description}}</p>
+    </div>
+    <div class="product-price"> {{cartItem.price}}</div>
+    <div class="product-quantity">
+      <button type="button" (click)="decrease(cartItem)" [disabled]=cartItem.btnDisable>-</button>
+      <input type="number" value={{cartItem.quantity}} min="1" disabled>
+      <button type="button" (click)="increase(cartItem)">+</button>
+    </div>
+    <div class="product-removal">
+      <button class="remove-product" (click)="removeItem(cartItem._id)">
+        Remove
+      </button>
+    </div>
+    <div class="product-line-price">{{cartItem.price * cartItem.quantity}}</div>
+  </div>
+
+  <div class="totals">
+    <div class="totals-item">
+      <label>Subtotal</label>
+      <div class="totals-value" id="cart-subtotal"> {{subTotel}}</div>
+    </div>
+    <div class="totals-item">
+      <label>Tax (5%)</label>
+      <div class="totals-value" id="cart-tax"> {{percentage}}</div>
+    </div>
+    <div class="totals-item">
+      <label>Shipping</label>
+      <div class="totals-value" id="cart-shipping"> {{shipping}}</div>
+    </div>
+    <div class="totals-item totals-item-total">
+      <label>Grand Total</label>
+      <div class="totals-value" id="cart-total"> {{grandTotel}}</div>
+    </div>
+  </div>
+      
+      <button class="checkout">Checkout</button>
+
+</div>

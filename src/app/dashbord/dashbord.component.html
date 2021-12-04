@@ -1,0 +1,89 @@
+<header class="header">
+    <div class="header_container">
+        <img [src]="userImage" alt="" class="header_image">
+
+        <a href="#" class="header_logo">Your Cart</a>
+        <div class="header_search">
+            <input type="search" placeholder="search" class="header_input">
+            <i class="fa fa-search header_icon" aria-hidden="true"></i>
+        </div>
+        <div class="header_toggle">
+            <i class="fa fa-bars fa-times" aria-hidden="true" id="header-toggle"></i>
+        </div>
+    </div>
+</header>
+<div class="contener">
+    <router-outlet></router-outlet>
+</div>
+
+<div class="nav" id="navbar">
+    <nav class="nav_container">
+        <div>
+            <div class="logo"></div>
+            
+            <div class="nav_list">
+                <!-- <div class="wrapper">
+                    <h1 contenteditable data-heading="Your Cart">Your Cart</h1>
+                </div> -->
+                <div class="nav_items">
+                    <a  class="nav_link" [routerLink]="['/sidebar/home']" [routerLinkActive]="'active-list-item'" [routerLinkActiveOptions]="{exact: true}">
+                        <i class="fa fa-home nav_icon" aria-hidden="true"></i>
+                        <span class="nav_name">Home</span>
+                    </a>
+                    <div class="nav_dropdown">
+                        <a  class="nav_link">
+                            <i class="fa fa-user nav_icon" aria-hidden="true"></i>
+                            <span class="nav_name">Profile</span>
+                            <i class="fa fa-chevron-down nav_icon nav_dropdown_icon" aria-hidden="true"></i>
+                        </a>
+                        <div class="nav_dropdown_collapse">
+                            <div class="nav_dropdown_containt">
+                                <a  class="nav_dropdown_items"  [routerLink]="['/sidebar/profile']" [routerLinkActive]="'active-list-item'" [routerLinkActiveOptions]="{exact: true}">Profile Details</a>
+                                <a  class="nav_dropdown_items" [routerLink]="['/sidebar/edit/profile']" [routerLinkActive]="'active-list-item'" [routerLinkActiveOptions]="{exact: true}">Edit Profile</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a class="nav_link" [routerLink]="['/sidebar/cart']" [routerLinkActive]="'active-list-item'" [routerLinkActiveOptions]="{exact: true}">
+                        <i class="fa fa-shopping-cart nav_icon" aria-hidden="true"></i>
+                        <span class="nav_name">Cart</span>
+                    </a>
+                    
+                    <a  class="nav_link">
+                        <i class="fa fa-comments nav_icon" aria-hidden="true"></i>
+                        <span class="nav_name">Message</span>
+                    </a>
+                </div>
+                <div class="nav_items">
+                    <h3 class="nav_subtitle">Menu</h3>
+                    <div class="nav_dropdown" *ngIf="admin">
+                        <a  class="nav_link">
+                            <i class="fa fa-lock nav_icon" aria-hidden="true"></i>
+                            <span class="nav_name">Admin Pannel</span>
+                            <i class="fa fa-chevron-down nav_icon nav_dropdown_icon" aria-hidden="true"></i>
+                        </a>
+                        <div class="nav_dropdown_collapse">
+                            <div class="nav_dropdown_containt">
+                                <a  class="nav_dropdown_items" [routerLink]="['/sidebar/add/item']" [routerLinkActive]="'active-list-item'" [routerLinkActiveOptions]="{exact: true}">Add Item</a>
+                                <a  class="nav_dropdown_items">Show Login User</a>
+                                <a  class="nav_dropdown_items">Admin Dashbord</a>
+                            </div>
+                        </div>
+                    </div>
+                    <a  class="nav_link">
+                        <i class="fa fa-compass nav_icon" aria-hidden="true"></i>
+                        <span class="nav_name">Explore</span>
+                    </a>
+                    <a  class="nav_link">
+                        <i class="fa fa-bookmark nav_icon" aria-hidden="true"></i>
+                        <span class="nav_name">Saved</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <a  class="nav_link nav_logout" (click)="logout()">
+            <i class="fa fa-sign-out nav_icon" aria-hidden="true"></i>
+            <span class="nav_name">Log Out</span>
+        </a>
+    </nav>
+</div>

@@ -1,0 +1,77 @@
+<div class="sidebar close">
+    <div class="logo-details">
+        <i class="fa fa-meetup" aria-hidden="true"></i>
+        <span class="logo_name">Your Cart</span>
+    </div>
+    <ul class="nav_links">
+        <li>
+            <a [routerLink]="['/sidebar/profile']">
+                <i class="fa fa-user" aria-hidden="true"></i>
+                <span class="link_name">Profile</span>
+            </a>
+            <ul class="sub_menu blank">
+                <li><a class="link_name" [routerLink]="['/sidebar/profile']">Profile</a></li>
+            </ul>
+        </li>
+        
+        <li>
+            <div class="icon_link">
+            <a [routerLink]="['/sidebar/home']">
+                <i class="fa fa-product-hunt" aria-hidden="true"></i>
+                <span class="link_name">All Category</span>
+            </a>
+            <i class="fa fa-caret-down arrow" aria-hidden="true"></i>
+        </div>
+        <ul class="sub_menu">
+            <li><a class="link_name" href="">Chicken</a></li>
+            <li><a href="">Matten</a></li>
+            <li><a href="">Panner</a></li>
+            <li><a href="">Veg</a></li>
+            <li><a href="">Dall</a></li>
+        </ul>
+        </li>
+        <li>
+            <a [routerLink]="['/sidebar/cart']">
+                <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                <span class="link_name">Cart</span>
+            </a>
+            <ul class="sub_menu blank">
+                <li><a class="link_name" [routerLink]="['/sidebar/cart']">Cart</a></li>
+            </ul>
+        </li>
+        <!-- <li>
+            <div class="icon_link">
+            <a href="">
+                <i class="fa fa-bookmark" aria-hidden="true"></i>
+                <span class="link_name">Post</span>
+            </a>
+            <i class="fa fa-caret-down arrow" aria-hidden="true"></i>
+        </div>
+        <ul class="sub_menu">
+            <li><a class="link_name" href="">gmail</a></li>
+            <li><a href="">facebook</a></li>
+            <li><a href="">twiter</a></li>
+        </ul>
+        </li> -->
+    
+    <li>
+        <div class="profile_details">
+            <div class="profile_content">
+                <img src="../../../assets/image/sign.svg" alt="">
+            </div>
+            <div class="name_job">
+                <div class="profile_name">Ravi Rajput</div>
+                <div class="email">httpmd20893@gmail</div>
+            </div>
+            <i class="fa fa-sign-out" aria-hidden="true"></i>
+        </div>
+    </li>
+</ul>
+</div>
+<section class="home_section">
+    <div class="home_content">
+        <i class="fa fa-bars" aria-hidden="true"></i>
+    </div>
+    <router-outlet></router-outlet>
+
+</section>
